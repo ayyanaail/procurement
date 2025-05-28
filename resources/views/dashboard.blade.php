@@ -4,9 +4,7 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-
     <div id="MainView">
         <x-orders-table :orders="$orders"/>
     </div>
-
 </x-app-layout>
