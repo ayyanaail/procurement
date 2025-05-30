@@ -26,6 +26,12 @@
                             </span>
                         </p>
                     </div>
+                    <div class="mb-6">
+                        <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400">Vendor Code</h4>
+                        <div class="mt-2 text-sm text-gray-900 dark:text-gray-100">
+                            {{ $vendor->vendor_code }}
+                        </div>
+                    </div>
 
                     @if($vendor->contact_person)
                     <div class="mb-6">

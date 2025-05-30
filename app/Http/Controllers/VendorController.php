@@ -12,7 +12,7 @@ class VendorController extends Controller
      */
     public function index()
     {
-        $vendors = Vendor::latest()->paginate(10);
+        $vendors = Vendor::orderBy('vendors.vendor_code')->paginate(10);
         return view('vendors.index', compact('vendors'));
     }
 
@@ -31,6 +31,7 @@ class VendorController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
+            'vendor_code'=> 'required|string|max:255',
             'contact_person' => 'nullable|string|max:255',
             'email' => 'nullable|email|max:255',
             'phone' => 'nullable|string|max:20',
@@ -72,6 +73,7 @@ class VendorController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
+            'vendor_code'=> 'required|string|max:255',
             'contact_person' => 'nullable|string|max:255',
             'email' => 'nullable|email|max:255',
             'phone' => 'nullable|string|max:20',
